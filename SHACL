@@ -1,0 +1,42 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+# Your exact namespace matching the file metadata
+@prefix : <http://www.semanticweb.org/gabrielakurteva/ontologies/2026/2/untitled-ontology-34#> .
+
+:NaturalPersonRightShapeValidation
+    a sh:NodeShape ;
+    sh:targetClass :NaturalPersonRight ;
+    
+    # Check 1: Ensure the citation label exists (without enforcing strict xsd:string)
+    sh:property [
+        sh:path <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "Validation Fault: Missing citation label." ;
+    ] ;
+
+    # Check 2: Ensure the definition exists (without enforcing strict xsd:string)
+    sh:property [
+        sh:path <http://www.w3.org/2004/02/skos/core#definition> ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Warning ;
+        sh:message "Validation Fault: Missing definition string." ;
+    ] ;
+
+    # Check 3: Ensure the property relation line connects to your Actor
+    sh:property [
+        sh:path :isHeldBy ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:message "Validation Fault: Missing connection to Actor." ;
+    ] .
