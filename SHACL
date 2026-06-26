@@ -5,8 +5,8 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 
-# Your exact namespace matching the file metadata
-@prefix : <http://www.semanticweb.org/gabrielakurteva/ontologies/2026/2/untitled-ontology-34#> .
+
+@prefix : .
 
 :NaturalPersonRightShapeValidation
     a sh:NodeShape ;
