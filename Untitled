@@ -977,10 +977,10 @@ skos:ConceptScheme rdf:type owl:Class ;
 
 ###  https://w3id.org/ehds/ontology#Right
 :Right rdf:type owl:Class ;
-       <http://purl.org/dc/terms/description> "This represents a generic root class for functional roles rather than a fixed institutional identity. It provides the abstract architectural anchor for all domain-specific compliance roles." ;
+       <http://purl.org/dc/terms/description> "This represents a generic class for a right. It provides the abstract architectural anchor for all domain-specific legal right." ;
        rdfs:label "Right" ;
        skos:closeMatch <https://w3id.org/dpv#Right> ;
-       skos:definition "An entity (natural person, legal person, organization, or public authority) that plays an active operational role within a regulated domain, serving as the bearer of statutory rights or the subject of legal mandates." ;
+       skos:definition "A statutory entitlement, individual or institutional claims enabling an actor to legally execute or demand specific actions." ;
        skos:prefLabel "Right" .
 
 
